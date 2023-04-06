@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css';
+import * as yup from 'yup';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const formValidationSchema = yup.object().shape({
 	username: yup
@@ -27,7 +30,17 @@ const formValidationSchema = yup.object().shape({
 });
 
 function App() {
-	return <div>Hellow</div>;
+	// Add
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm({
+		mode: 'onBlur',
+		resolver: yupResolver(validationSchema),
+	});
+
+	return;
 }
 
 export default App;
