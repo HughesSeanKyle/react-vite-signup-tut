@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -37,10 +36,89 @@ function App() {
 		formState: { errors },
 	} = useForm({
 		mode: 'onBlur',
-		resolver: yupResolver(validationSchema),
+		resolver: yupResolver(formValidationSchema),
 	});
 
-	return;
+	return (
+		// * Add
+		<div className="bg-gray-500 h-screen py-8 px-4 sm:px-6 lg:px-8">
+			<div className="max-w-md mx-auto rounded-lg overflow-hidden">
+				<div className="bg-white mt-5 p-6 rounded-lg shadow-lg shadow-gray-900">
+					<h2 className="text-2xl font-semibold mb-6">YourProjectName.io</h2>
+					<form>
+						<h2 className="text-xl font-semibold mb-4">SIGN UP</h2>
+						<div className="mb-4">
+							<label
+								className="block text-gray-700 font-bold mb-2"
+								for="username"
+							>
+								Username
+							</label>
+							<input
+								className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"
+								id="username"
+								type="text"
+								name="username"
+								placeholder="Your username"
+							/>
+							<p className="text-red-500 text-sm mt-1"></p>
+						</div>
+						<div className="mb-4">
+							<label className="block text-gray-700 font-bold mb-2" for="email">
+								Email
+							</label>
+							<input
+								className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"
+								id="email"
+								type="email"
+								name="email"
+								placeholder="Your email"
+							/>
+							<p className="text-red-500 text-sm mt-1"></p>
+						</div>
+						<div className="mb-4">
+							<label
+								className="block text-gray-700 font-bold mb-2"
+								for="password"
+							>
+								Password
+							</label>
+							<input
+								className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"
+								id="password"
+								type="password"
+								name="password"
+								placeholder="Your password"
+							/>
+							<p className="text-red-500 text-sm mt-1"></p>
+						</div>
+						<div className="mb-4">
+							<label
+								className="block text-gray-700 font-bold mb-2"
+								for="passwordConfirm"
+							>
+								Confirm Password
+							</label>
+							<input
+								className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"
+								id="passwordConfirm"
+								type="password"
+								name="passwordConfirm"
+								placeholder="Confirm password"
+							/>
+							<p className="text-red-500 text-sm mt-1"></p>
+						</div>
+						<button
+							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+							type="button"
+						>
+							Submit
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
