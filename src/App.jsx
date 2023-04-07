@@ -123,7 +123,13 @@ function App() {
 						</div>
 						<button
 							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-							type="button"
+							type="submit"
+							disabled={Object.keys(errors).length !== 0}
+							title={
+								Object.keys(errors).length !== 0
+									? 'Please complete the required fields above to submit'
+									: ''
+							}
 						>
 							Submit
 						</button>
