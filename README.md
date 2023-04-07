@@ -12,6 +12,10 @@ Open the terminal and navigate to the project directory.
 Run the command `npm install` to install the project dependencies.
 Run the command `npm run dev` to start the development server.
 
-# Conclusion
+## Tutorial companion Blog post
+
+https://medium.com/@khughessean01/react-vite-form-validation-with-yup-and-react-hook-form-e91961c50459
+
+## Conclusion
 
 This project has demonstrated how to set up form validation in React using the Yup validation library and the React Hook Form library, while also incorporating the Tailwind CSS styling library for styling the form. With this knowledge, you can easily set up form validation in your own React projects.
