@@ -29,7 +29,6 @@ const formValidationSchema = yup.object().shape({
 });
 
 function App() {
-	// Add
 	const {
 		register,
 		handleSubmit,
@@ -40,17 +39,16 @@ function App() {
 	});
 
 	return (
-		// * Add
-		<div className="bg-gray-500 h-screen py-8 px-4 sm:px-6 lg:px-8">
+		<div className="bg-gray-500 min-h-[0] py-8 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-md mx-auto rounded-lg overflow-hidden">
-				<div className="bg-white mt-5 p-6 rounded-lg shadow-lg shadow-gray-900">
+				<div className="bg-white my-5 p-6 rounded-lg shadow-sm shadow-gray-900">
 					<h2 className="text-2xl font-semibold mb-6">YourProjectName.io</h2>
 					<form>
 						<h2 className="text-xl font-semibold mb-4">SIGN UP</h2>
 						<div className="mb-4">
 							<label
 								className="block text-gray-700 font-bold mb-2"
-								for="username"
+								htmlFor="username"
 							>
 								Username
 							</label>
@@ -60,11 +58,17 @@ function App() {
 								type="text"
 								name="username"
 								placeholder="Your username"
+								{...register('username')}
 							/>
-							<p className="text-red-500 text-sm mt-1"></p>
+							<p className="text-red-500 text-sm mt-1">
+								{errors?.username?.message}
+							</p>
 						</div>
 						<div className="mb-4">
-							<label className="block text-gray-700 font-bold mb-2" for="email">
+							<label
+								className="block text-gray-700 font-bold mb-2"
+								htmlFor="email"
+							>
 								Email
 							</label>
 							<input
@@ -73,13 +77,16 @@ function App() {
 								type="email"
 								name="email"
 								placeholder="Your email"
+								{...register('email')}
 							/>
-							<p className="text-red-500 text-sm mt-1"></p>
+							<p className="text-red-500 text-sm mt-1">
+								{errors?.email?.message}
+							</p>
 						</div>
 						<div className="mb-4">
 							<label
 								className="block text-gray-700 font-bold mb-2"
-								for="password"
+								htmlFor="password"
 							>
 								Password
 							</label>
@@ -89,13 +96,16 @@ function App() {
 								type="password"
 								name="password"
 								placeholder="Your password"
+								{...register('password')}
 							/>
-							<p className="text-red-500 text-sm mt-1"></p>
+							<p className="text-red-500 text-sm mt-1">
+								{errors?.password?.message}
+							</p>
 						</div>
 						<div className="mb-4">
 							<label
 								className="block text-gray-700 font-bold mb-2"
-								for="passwordConfirm"
+								htmlFor="passwordConfirm"
 							>
 								Confirm Password
 							</label>
@@ -105,8 +115,11 @@ function App() {
 								type="password"
 								name="passwordConfirm"
 								placeholder="Confirm password"
+								{...register('passwordConfirm')}
 							/>
-							<p className="text-red-500 text-sm mt-1"></p>
+							<p className="text-red-500 text-sm mt-1">
+								{errors?.passwordConfirm?.message}
+							</p>
 						</div>
 						<button
 							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
