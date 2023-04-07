@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://HughesSeanKyle.github.io/react-vite-signup-tut/",
+	"homepage": "https://HughesSeanKyle.github.io/signup-tut/",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
